@@ -1,0 +1,72 @@
+.container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  margin-right: 10px;
+}
+
+.input-container input {
+  color: white; /* Text color */
+  background-color: transparent; /* Make the background transparent */
+  border: 1px solid white; /* Add border */
+  padding: 8px; /* Add padding for better spacing */
+  width: 100%; /* Ensure the input takes up full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Set placeholder color */
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.prescription-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white; /* Text color */
+}
+
+.prescription-table th,
+.prescription-table td {
+  border: 1px solid white;
+  padding: 8px;
+  color: white; /* Text color */
+}
+
+.prescription-table th {
+  background-color: #333;
+}
+
+.save-btn {
+  background-color: #008cba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.save-btn:hover {
+  background-color: #007aaf;
+}
