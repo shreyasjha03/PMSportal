@@ -10,10 +10,10 @@ export default function BookingPage() {
   const [selectedDoctor, setSelectedDoctor] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+  const [patientId, setPatientId] = useState(""); // New state for patient ID
 
   const fetchTimeSlots = async () => {
     try {
-      // Adjust the endpoint URL according to your API route
       const response = await axios.post(
         `http://localhost:3000/api/AvailableTime/${selectedDoctor}`,
         {
@@ -25,6 +25,7 @@ export default function BookingPage() {
       console.error("Error fetching time slots:", error);
     }
   };
+
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
@@ -51,6 +52,10 @@ export default function BookingPage() {
     setSelectedTime(event.target.value);
   };
 
+  const handlePatientIdChange = (event) => {
+    setPatientId(event.target.value);
+  };
+
   const handleAppointmentSelection = (slot) => {
     const selectedSlot = document.getElementById(slot);
     if (selectedSlot.classList.contains("selected")) {
@@ -58,6 +63,11 @@ export default function BookingPage() {
     } else {
       selectedSlot.classList.add("selected");
     }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Add logic to submit appointment with selected data and patient ID
   };
 
   return (
@@ -75,7 +85,7 @@ export default function BookingPage() {
           >
             Book an Appointment
           </h1>
-          <form className="max-w-lg mx-auto">
+          <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
             <div className="mb-4 flex flex-col">
               <label className="block mb-2" htmlFor="doctor">
                 Doctor:
@@ -141,6 +151,21 @@ export default function BookingPage() {
                 </select>
               </div>
             )}
+            <div className="mb-4 flex flex-col">
+              <label className="block mb-2" htmlFor="patientId">
+                Patient ID:
+              </label>
+              <input
+                type="text"
+                name="patientId"
+                id="patientId"
+                className="input-field"
+                required
+                style={{ color: "black" }}
+                value={patientId}
+                onChange={handlePatientIdChange}
+              />
+            </div>
             <div className="mb-4 flex flex-col">
               <label className="block mb-2" htmlFor="reason">
                 Reason for Appointment:

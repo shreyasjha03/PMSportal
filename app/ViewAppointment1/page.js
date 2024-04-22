@@ -43,40 +43,13 @@ function AppointmentPage() {
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
-            <th
-              style={{
-                border: "1px solid #444",
-                padding: "12px",
-                textAlign: "left",
-                textTransform: "uppercase",
-              }}
-            >
-              Doctor Name
-            </th>
-            <th
-              style={{
-                border: "1px solid #444",
-                padding: "12px",
-                textAlign: "left",
-                textTransform: "uppercase",
-              }}
-            >
-              Date
-            </th>
-            <th
-              style={{
-                border: "1px solid #444",
-                padding: "12px",
-                textAlign: "left",
-                textTransform: "uppercase",
-              }}
-            >
-              Time
-            </th>
+            <th style={tableHeaderStyle}>Doctor Name</th>
+            <th style={tableHeaderStyle}>Date</th>
+            <th style={tableHeaderStyle}>Time</th>
           </tr>
         </thead>
         <tbody>
-          {appointments?.map((appointment, index) => (
+          {appointments.map((appointment, index) => (
             <tr
               key={index}
               style={{
@@ -84,15 +57,9 @@ function AppointmentPage() {
                 color: "white",
               }}
             >
-              <td style={{ border: "1px solid #444", padding: "12px" }}>
-                {appointment.name}
-              </td>
-              <td style={{ border: "1px solid #444", padding: "12px" }}>
-                {appointment.appointment_date}
-              </td>
-              <td style={{ border: "1px solid #444", padding: "12px" }}>
-                {appointment.appointment_time}
-              </td>
+              <td style={tableCellStyle}>{appointment.name}</td>
+              <td style={tableCellStyle}>{appointment.appointment_date}</td>
+              <td style={tableCellStyle}>{appointment.appointment_time}</td>
             </tr>
           ))}
         </tbody>
@@ -100,5 +67,17 @@ function AppointmentPage() {
     </div>
   );
 }
+
+const tableHeaderStyle = {
+  border: "1px solid #444",
+  padding: "12px",
+  textAlign: "left",
+  textTransform: "uppercase",
+};
+
+const tableCellStyle = {
+  border: "1px solid #444",
+  padding: "12px",
+};
 
 export default AppointmentPage;

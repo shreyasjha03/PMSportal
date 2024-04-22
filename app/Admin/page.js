@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,68 +14,74 @@ export default function Home() {
         style={{ zIndex: -1 }}
       >
         <Image
-          src="/appointment.jpg"
+          src="/clay.jpg"
           alt="Description of the image"
           layout="fill"
           objectFit="cover"
         />
       </div>
 
-      <div className="mb-30 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-right lg:gap-2">
-        <div className="flex flex-col justify-center items-center lg:col-span-3"></div>
-        <div className="lg:flex lg:flex-col lg:items-end">
-          <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 lg:mb-2">
-            <h2
-              className={`mb-3 text-2xl font-bold`}
-              style={{ color: "black" }}
-            >
+      <div className="mb-30 grid gap-8 justify-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:gap-8">
+        <div className="lg:flex lg:flex-col lg:items-center lg:justify-center">
+          <a className="group rounded-lg border border-gray-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+            <h2 className="mb-3 text-2xl font-bold" style={{ color: "black" }}>
               <Link href="/SignupPatient">Add Patient</Link>
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            <p className="m-0 max-w-[30ch] text-sm opacity-50">
               Click Here to add a new Patient
             </p>
           </a>
-          <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30 lg:mb-2">
+        </div>
+
+        <div className="lg:flex lg:flex-col lg:items-center lg:justify-center">
+          <a className="group rounded-lg border border-gray-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2
-              className={`mb-3 text-2xl font-semibold`}
+              className="mb-3 text-2xl font-semibold"
               style={{ color: "black" }}
             >
-              View Appointment
+              <Link href="/ViewAppointment2">View Appointment</Link>
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            <p className="m-0 max-w-[30ch] text-sm opacity-50">
               Show Appointment
             </p>
           </a>
-          <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30 lg:mb-2">
+        </div>
+
+        <div className="lg:flex lg:flex-col lg:items-center lg:justify-center">
+          <a className="group rounded-lg border border-gray-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2
-              className={`mb-3 text-2xl font-semibold`}
+              className="mb-3 text-2xl font-semibold"
               style={{ color: "black" }}
             >
-              Bills
+              <Link href="/SignupDoctor">Add Doctor</Link>
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Upload Bill</p>
+            <p className="m-0 max-w-[30ch] text-sm opacity-50">Add Doctor</p>
           </a>
-          <a className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
+        </div>
+
+        <div className="lg:flex lg:flex-col lg:items-center lg:justify-center">
+          <a className="group rounded-lg border border-gray-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30">
             <h2
-              className={`mb-3 text-2xl font-semibold`}
+              className="mb-3 text-2xl font-semibold"
               style={{ color: "black" }}
             >
-              Add Doctor
+              <Link href="/Appointment">Add Appointment</Link>
+
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-              Add Doctor
+            <p className="m-0 max-w-[30ch] text-sm opacity-50">
+              Add Appointment
             </p>
           </a>
         </div>
